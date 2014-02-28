@@ -1,5 +1,5 @@
 {
-   "abstract" : "Generator of vector data of QRCode",
+   "abstract" : "A generator class for vector data of QRCode",
    "author" : [
       "ytnobody <ytnobody@gmail.com>"
    ],

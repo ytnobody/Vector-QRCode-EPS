@@ -1,6 +1,6 @@
 # NAME
 
-Vector::QRCode::EPS - Generator of vector data of QRCode
+Vector::QRCode::EPS - A generator class for vector data of QRCode
 
 # SYNOPSIS
 

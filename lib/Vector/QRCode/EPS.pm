@@ -52,7 +52,7 @@ __END__
 
 =head1 NAME
 
-Vector::QRCode::EPS - Generator of vector data of QRCode
+Vector::QRCode::EPS - A generator class for vector data of QRCode
 
 =head1 SYNOPSIS
 
