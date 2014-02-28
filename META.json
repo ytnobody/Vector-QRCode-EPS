@@ -55,5 +55,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/ytnobody/Vector-QRCode-EPS/issues"
+      },
+      "homepage" : "https://github.com/ytnobody/Vector-QRCode-EPS",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/ytnobody/Vector-QRCode-EPS.git",
+         "web" : "https://github.com/ytnobody/Vector-QRCode-EPS"
+      }
+   },
    "version" : "0.01"
 }
