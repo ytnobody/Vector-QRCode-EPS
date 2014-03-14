@@ -10,6 +10,8 @@ Vector::QRCode::EPS - A generator class for vector data of QRCode
     my $ps = Vector::QRCode::EPS->generate(
         text   => 'Hello, world!',
         colour => [255, 0, 0], 
+        bgcolour => [150, 150, 150],
+        transparent => 0,
         size   => 6,
         unit   => 'cm',
     );
@@ -52,6 +54,14 @@ Options are followings.
 - colour
 
     Optional. RGB colour specification in arrayref. Default is \[10, 10, 10\].
+
+- bgcolour
+
+    Optional. RGP colour specification for background color in arrayref. Default is \[255, 255, 255\].
+
+- transparent
+
+    Optional. Transparent background when true value is specified. Default is undef.
 
 # LICENSE
 
