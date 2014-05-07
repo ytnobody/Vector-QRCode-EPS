@@ -8,12 +8,16 @@ Vector::QRCode::EPS - A generator class for vector data of QRCode
     
 
     my $ps = Vector::QRCode::EPS->generate(
-        text   => 'Hello, world!',
-        colour => [255, 0, 0], 
-        bgcolour => [150, 150, 150],
+        text        => 'Hello, world!',
+        colour      => [255, 0, 0], 
+        bgcolour    => [150, 150, 150],
         transparent => 0,
-        size   => 6,
-        unit   => 'cm',
+        size        => 6,
+        unit        => 'cm',
+        qrcode_options => {
+            version => 5,
+            level   => 'H',
+        },
     );
     $ps->output('qrcode.ps');
 
@@ -62,6 +66,10 @@ Options are followings.
 - transparent
 
     Optional. Transparent background when true value is specified. Default is undef.
+
+- qrcode\_options
+
+    Optional. Options as [Text::QRCode](http://search.cpan.org/perldoc?Text::QRCode). Default is undef.
 
 # LICENSE
 

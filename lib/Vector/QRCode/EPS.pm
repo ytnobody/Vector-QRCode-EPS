@@ -5,7 +5,7 @@ use warnings;
 use PostScript::Simple;
 use Text::QRCode;
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 sub generate {
     my ($class, %opts) = @_;
@@ -16,7 +16,9 @@ sub generate {
     my $bgcolour = $opts{bgcolour} || [255,255,255];
     my $transparent = $opts{transparent};
 
-    my $qrdata = Text::QRCode->new->plot($text);
+    my $qrcode_options = $opts{qrcode_options} || {};
+
+    my $qrdata = Text::QRCode->new(%$qrcode_options)->plot($text);
     $qrdata = [reverse @$qrdata]; ### avoid to upside down
 
     my $xsize = scalar( @{$qrdata->[0]} );
@@ -66,12 +68,16 @@ Vector::QRCode::EPS - A generator class for vector data of QRCode
     use Vector::QRCode::EPS;
     
     my $ps = Vector::QRCode::EPS->generate(
-        text   => 'Hello, world!',
-        colour => [255, 0, 0], 
-        bgcolour => [150, 150, 150],
+        text        => 'Hello, world!',
+        colour      => [255, 0, 0], 
+        bgcolour    => [150, 150, 150],
         transparent => 0,
-        size   => 6,
-        unit   => 'cm',
+        size        => 6,
+        unit        => 'cm',
+        qrcode_options => {
+            version => 5,
+            level   => 'H',
+        },
     );
     $ps->output('qrcode.ps');
 
@@ -121,6 +127,10 @@ Optional. RGP colour specification for background color in arrayref. Default is 
 =item transparent
 
 Optional. Transparent background when true value is specified. Default is undef.
+
+=item qrcode_options
+
+Optional. Options as L<Text::QRCode>. Default is undef.
 
 =back
 

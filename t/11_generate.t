@@ -11,7 +11,6 @@ isa_ok $data, 'PostScript::Simple';
 
 my $expect = do {local $/; <DATA>};
 like $data->get, qr/$expect/, 'expected data';
-$data->output('/tmp/doa.eps');
 
 done_testing;
 
