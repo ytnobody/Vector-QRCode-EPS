@@ -8,6 +8,7 @@ perl:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y libqrencode3
+  - sudo apt-get install -y libqrencode-dev
 
 before_script:
   - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Coveralls
