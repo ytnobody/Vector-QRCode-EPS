@@ -12,7 +12,7 @@ my $data = Vector::QRCode::EPS->generate(
         levelt  => 'H',
     },
 );
-isa_ok $data, 'PostScript::Simple';
+isa_ok $data, 'PostScript::Easy';
 
 my $expect = do {local $/; <DATA>};
 like $data->get, qr/$expect/, 'expected data';

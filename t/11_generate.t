@@ -7,7 +7,7 @@ can_ok 'Vector::QRCode::EPS', 'generate';
 my $data = Vector::QRCode::EPS->generate(
     text => 'This is a test',
 );
-isa_ok $data, 'PostScript::Simple';
+isa_ok $data, 'PostScript::Easy';
 
 my $expect = do {local $/; <DATA>};
 like $data->get, qr/$expect/, 'expected data';
