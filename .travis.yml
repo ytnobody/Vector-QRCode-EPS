@@ -8,4 +8,14 @@ perl:
 before_script:
   - sudo apt-get update -qq
   - sudo apt-get install libqrencode -qq
+  - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Coveralls
+  - cover -delete 
+
+script:
+  - perl Build.PL 
+  - ./Build build 
+  - HARNESS_PERL_SWITCHES="-MDevel::Cover=+ignore,inc" PERL5LIB="lib" prove t/
+
+after_success:
+  - cover -report coveralls
 
