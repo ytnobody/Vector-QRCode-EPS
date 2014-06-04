@@ -5,7 +5,7 @@ use warnings;
 use PostScript::Easy;
 use Text::QRCode;
 
-our $VERSION = "0.03";
+our $VERSION = "0.04";
 
 sub generate {
     my ($class, %opts) = @_;
