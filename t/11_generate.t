@@ -10,11 +10,13 @@ my $data = Vector::QRCode::EPS->generate(
     text => 'This is a test',
 );
 my $creation_date = localtime(time());
+my $user = getlogin || 'Console';
 
 isa_ok $data, 'PostScript::Simple';
 
 my $expect = do {local $/; <DATA>};
 $expect =~ s/__TIME__/$creation_date/;
+$expect =~ s/__USER__/$user/;
 eq_or_diff $data->get, $expect, 'expected data';
 
 done_testing;
@@ -25,7 +27,7 @@ __DATA__
 %%LanguageLevel: 1
 %%Creator: PostScript::Simple perl module version 0.08
 %%CreationDate: __TIME__
-%%For: Console
+%%For: __USER__
 %%Orientation: Portrait
 %%BoundingBox: 0 0 283 283
 %%EndComments
