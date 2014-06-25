@@ -25,7 +25,7 @@ Vector::QRCode::EPS - A generator class for vector data of QRCode
 
 # DESCRIPTION
 
-Vector::QRCode::EPS is a generator that returns a QRCode data as [PostScript::Easy](http://search.cpan.org/perldoc?PostScript::Easy) object.
+Vector::QRCode::EPS is a generator that returns a QRCode data as [PostScript::Simple](http://search.cpan.org/perldoc?PostScript::Simple) object.
 
 # REQUIREMENT
 
@@ -35,7 +35,7 @@ You have to install [libqrencode](https://github.com/fukuchi/libqrencode) into y
 
 ## generate
 
-Returns a [PostScript::Easy](http://search.cpan.org/perldoc?PostScript::Easy) object that contains a vector data of QRCode.
+Returns a [PostScript::Simple](http://search.cpan.org/perldoc?PostScript::Simple) object that contains a vector data of QRCode.
 
     $ps_obj = Vector::QRCode::EPS->generate(%options);
 
@@ -53,7 +53,7 @@ Options are followings.
 
     Optional. Unit from 'mm', 'cm', 'in', 'pt', and 'bp'. Default is 'cm'.
 
-    Please see more datail for [CONSTRUCTOR Paragraph of the PostScript::Easy documentation](http://search.cpan.org/perldoc?PostScript::Easy\#CONSTRUCTOR).
+    Please see more datail for [CONSTRUCTOR Paragraph of the PostScript::Simple documentation](http://search.cpan.org/perldoc?PostScript::Simple\#CONSTRUCTOR).
 
 - colour
 
@@ -86,6 +86,6 @@ ytnobody <ytnobody@gmail.com>
 
 [libqrencode](https://github.com/fukuchi/libqrencode)
 
-[PostScript::Easy](http://search.cpan.org/perldoc?PostScript::Easy)
+[PostScript::Simple](http://search.cpan.org/perldoc?PostScript::Simple)
 
 [Text::QRCode](http://search.cpan.org/perldoc?Text::QRCode)

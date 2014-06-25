@@ -44,7 +44,7 @@
       },
       "runtime" : {
          "requires" : {
-            "PostScript::Easy" : "0",
+            "PostScript::Simple" : "0.08",
             "Text::QRCode" : "0",
             "perl" : "5.008005"
          }
@@ -67,5 +67,5 @@
          "web" : "https://github.com/ytnobody/Vector-QRCode-EPS"
       }
    },
-   "version" : "0.04"
+   "version" : "0.05"
 }
