@@ -52,9 +52,7 @@
       "test" : {
          "requires" : {
             "Test::Differences" : "0",
-            "Test::More" : "0.98",
-            "Test::Time" : "0",
-            "Time::Piece" : "0"
+            "Test::More" : "0.98"
          }
       }
    },

@@ -5,7 +5,5 @@ requires 'PostScript::Simple', '0.08';
 on 'test' => sub {
     requires 'Test::More', '0.98';
     requires 'Test::Differences';
-    requires 'Test::Time';
-    requires 'Time::Piece';
 };
 

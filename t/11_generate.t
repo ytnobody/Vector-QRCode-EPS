@@ -1,7 +1,6 @@
 use strict;
 use Test::More;
 use Test::Differences;
-use Test::Time;
 use Vector::QRCode::EPS;
 
 can_ok 'Vector::QRCode::EPS', 'generate';
@@ -9,10 +8,11 @@ can_ok 'Vector::QRCode::EPS', 'generate';
 my $data = Vector::QRCode::EPS->generate(
     text => 'This is a test',
 );
-my $creation_date = localtime(time());
 my $user = getlogin || 'Console';
 
 isa_ok $data, 'PostScript::Simple';
+
+my ($creation_date) = $data->get =~ /CreationDate: (.+)\n/;
 
 my $expect = do {local $/; <DATA>};
 $expect =~ s/__TIME__/$creation_date/;

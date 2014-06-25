@@ -1,10 +1,7 @@
 use strict;
 use Test::More;
 use Test::Differences;
-use Test::Time;
-use Time::Piece;
 use Vector::QRCode::EPS;
-
 
 can_ok 'Vector::QRCode::EPS', 'generate';
 
@@ -16,10 +13,11 @@ my $data = Vector::QRCode::EPS->generate(
         levelt  => 'H',
     },
 );
-my $creation_date = localtime(time());
 my $user = getlogin || 'Console';
 
 isa_ok $data, 'PostScript::Simple';
+
+my ($creation_date) = $data->get =~ /CreationDate: (.+)\n/;
 
 my $expect = do {local $/; <DATA>};
 $expect =~ s/__TIME__/$creation_date/;
