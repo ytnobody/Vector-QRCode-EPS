@@ -1,7 +1,8 @@
 use strict;
 use Test::More;
-use Test::Differences;
+use Test::Number::Delta;
 use Vector::QRCode::EPS;
+use t::EPS::Util;
 
 can_ok 'Vector::QRCode::EPS', 'generate';
 
@@ -12,12 +13,39 @@ my $user = getlogin || 'Console';
 
 isa_ok $data, 'PostScript::Simple';
 
-my ($creation_date) = $data->get =~ /CreationDate: (.+)\n/;
+my $result = $data->get;
+
+my ($creation_date) = $result =~ /CreationDate: (.+)\n/;
 
 my $expect = do {local $/; <DATA>};
 $expect =~ s/__TIME__/$creation_date/;
 $expect =~ s/__USER__/$user/;
-eq_or_diff $data->get, $expect, 'expected data';
+
+my $res = t::EPS::Util->new($result);
+my $exp = t::EPS::Util->new($expect);
+
+my @res_body = $res->body;
+my @exp_body = $exp->body;
+
+my @res_qr_cell = splice(@res_body, 3);
+my @exp_qr_cell = splice(@exp_body, 3);
+
+is scalar(@res_qr_cell), scalar(@exp_qr_cell), sprintf('%d cells defination is there', scalar(@exp_qr_cell));
+
+
+subtest cell_accuracy_test => sub {
+    my $cell_pattern = qr/^([0-9\.]+) ucm ([0-9\.]+) ucm ([0-9\.]+) ucm ([0-9\.]+) ucm box fill$/;
+    
+    for my $i (0 .. $#exp_qr_cell) {
+        my @res_cell_def = $res_qr_cell[$i] =~ $cell_pattern;
+        my @exp_cell_def = $exp_qr_cell[$i] =~ $cell_pattern;
+    
+        delta_within(
+            \@res_cell_def, \@exp_cell_def, 1e-15, 
+            sprintf("compare: \n==RES==\n%s\n==EXPECT==\n%s\n", $res_qr_cell[$i], $exp_qr_cell[$i])
+        );
+    }
+};
 
 done_testing;
 

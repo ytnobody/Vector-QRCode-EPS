@@ -6,7 +6,6 @@ Vector::QRCode::EPS - A generator class for vector data of QRCode
 
     use Vector::QRCode::EPS;
     
-
     my $ps = Vector::QRCode::EPS->generate(
         text        => 'Hello, world!',
         colour      => [255, 0, 0], 
@@ -21,11 +20,9 @@ Vector::QRCode::EPS - A generator class for vector data of QRCode
     );
     $ps->output('qrcode.ps');
 
-
-
 # DESCRIPTION
 
-Vector::QRCode::EPS is a generator that returns a QRCode data as [PostScript::Simple](http://search.cpan.org/perldoc?PostScript::Simple) object.
+Vector::QRCode::EPS is a generator that returns a QRCode data as [PostScript::Simple](https://metacpan.org/pod/PostScript::Simple) object.
 
 # REQUIREMENT
 
@@ -35,7 +32,7 @@ You have to install [libqrencode](https://github.com/fukuchi/libqrencode) into y
 
 ## generate
 
-Returns a [PostScript::Simple](http://search.cpan.org/perldoc?PostScript::Simple) object that contains a vector data of QRCode.
+Returns a [PostScript::Simple](https://metacpan.org/pod/PostScript::Simple) object that contains a vector data of QRCode.
 
     $ps_obj = Vector::QRCode::EPS->generate(%options);
 
@@ -53,7 +50,7 @@ Options are followings.
 
     Optional. Unit from 'mm', 'cm', 'in', 'pt', and 'bp'. Default is 'cm'.
 
-    Please see more datail for [CONSTRUCTOR Paragraph of the PostScript::Simple documentation](http://search.cpan.org/perldoc?PostScript::Simple\#CONSTRUCTOR).
+    Please see more datail for [CONSTRUCTOR Paragraph of the PostScript::Simple documentation](http://search.cpan.org/perldoc?PostScript::Simple#CONSTRUCTOR).
 
 - colour
 
@@ -69,7 +66,7 @@ Options are followings.
 
 - qrcode\_options
 
-    Optional. Options as [Text::QRCode](http://search.cpan.org/perldoc?Text::QRCode). Default is undef.
+    Optional. Options as [Text::QRCode](https://metacpan.org/pod/Text::QRCode). Default is undef.
 
 # LICENSE
 
@@ -86,6 +83,6 @@ ytnobody <ytnobody@gmail.com>
 
 [libqrencode](https://github.com/fukuchi/libqrencode)
 
-[PostScript::Simple](http://search.cpan.org/perldoc?PostScript::Simple)
+[PostScript::Simple](https://metacpan.org/pod/PostScript::Simple)
 
-[Text::QRCode](http://search.cpan.org/perldoc?Text::QRCode)
+[Text::QRCode](https://metacpan.org/pod/Text::QRCode)
