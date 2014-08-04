@@ -66,5 +66,8 @@
          "web" : "https://github.com/ytnobody/Vector-QRCode-EPS"
       }
    },
-   "version" : "0.05"
+   "version" : "0.06",
+   "x_contributors" : [
+      "ytnobody <ytnobody@ytnobody.net>"
+   ]
 }

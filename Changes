@@ -2,6 +2,9 @@ Revision history for Perl extension Vector-QRCode-EPS
 
 {{$NEXT}}
 
+0.06 2014-08-04T15:34:56Z
+    - refactor cell tests
+
 0.05 2014-06-25T04:58:18Z
     - change dependency from PostScript::Easy to PostScript::Simple v0.08.
       Because, PostScript::Simple was fixed a bug about providing some Test::* modules in version 0.08.
