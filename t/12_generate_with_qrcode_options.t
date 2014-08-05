@@ -46,7 +46,7 @@ subtest cell_accuracy_test => sub {
         my @exp_cell_def = $exp_qr_cell[$i] =~ $cell_pattern;
     
         delta_within(
-            \@res_cell_def, \@exp_cell_def, 1e-15,
+            \@res_cell_def, \@exp_cell_def, 1e-12,
             sprintf("compare: \n==RES==\n%s\n==EXPECT==\n%s\n", $res_qr_cell[$i], $exp_qr_cell[$i])
         );
     }
