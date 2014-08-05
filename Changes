@@ -2,6 +2,9 @@ Revision history for Perl extension Vector-QRCode-EPS
 
 {{$NEXT}}
 
+0.07 2014-08-05T07:13:00Z
+    - more loose testing about cell accuracy
+
 0.06 2014-08-04T15:34:56Z
     - refactor cell tests
 
