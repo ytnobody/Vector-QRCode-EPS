@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ytnobody/Vector-QRCode-EPS.svg?branch=master)](https://travis-ci.org/ytnobody/Vector-QRCode-EPS)
 # NAME
 
 Vector::QRCode::EPS - A generator class for vector data of QRCode
