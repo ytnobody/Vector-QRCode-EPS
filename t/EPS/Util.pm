@@ -22,7 +22,15 @@ sub prolog {
 
 sub body {
     my ($class) = @_;
-    my ($data) = $class->{string} =~ /\%\%EndProlog\n(.*)\%\%EOF/ms;
+
+    ### for Setup Section
+    my ($data) = $class->{string} =~ /\%\%EndSetup\n(.*)\%\%EOF/ms;
+
+    ### if Setup Section is not exists
+    if (!$data) {
+        ($data) = $class->{string} =~ /\%\%EndProlog\n(.*)\%\%EOF/ms;
+    }
+
     my @lines = split /\n/, $data;
     return @lines;
 }
