@@ -2,6 +2,10 @@ Revision history for Perl extension Vector-QRCode-EPS
 
 {{$NEXT}}
 
+0.08 2017-02-19T03:11:32Z
+    - Fixed a test-utility to support a setup section in generated postscript.
+      (Thanks to Josef Kutej and Wooter)
+
 0.07 2014-08-05T07:13:00Z
     - more loose testing about cell accuracy
 
